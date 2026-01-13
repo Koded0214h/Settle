@@ -3,7 +3,7 @@ from django.utils import timezone
 from django.core.cache import cache
 from django.conf import settings
 from .models import Invoice, Transaction, WebhookEvent
-from .blockchain import (
+from .blockchain.blockchain import (
     create_invoice_on_blockchain, pay_invoice_on_blockchain,
     get_invoice_from_contract, convert_usdc_to_wei,
     create_user_operation, sponsor_gas_with_paymaster,

@@ -1,7 +1,7 @@
 import uuid
 from django.db import models
 from django.utils import timezone
-from django.core.validators import MinValueValidator
+from django.core.validators import MinValueValidator, MinLengthValidator
 from django.conf import settings
 from decimal import Decimal
 
@@ -32,7 +32,7 @@ class Invoice(models.Model):
     client_wallet = models.CharField(
         max_length=42, 
         blank=True,
-        validators=[models.MinLengthValidator(42)]
+        validators=[MinLengthValidator(42)]
     )
     client_name = models.CharField(max_length=255, blank=True)
     
